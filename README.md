@@ -73,8 +73,8 @@ python3 manage.py migrate
 
 ### Response
 
-    HTTP 201 Created
-    Allow: GET, PUT, DELETE, HEAD, OPTIONS
+    HTTP 200 OK
+    Allow: PUT, DELETE, OPTIONS
     Content-Type: application/json
     Vary: Accept
 
