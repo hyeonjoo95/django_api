@@ -1,0 +1,4 @@
+Django
+djangorestframework
+mysqlclient
+debugpy==1.5.1
