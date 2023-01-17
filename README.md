@@ -29,10 +29,10 @@ python3 manage.py migrate
     Vary: Accept
 
     {
-        "user_id": 123,
+        "user_id": 1001,
         "date": "2023-01-17",
         "tag": "IN",
-        "created": "2023-01-17T16:11:20.541688"
+        "created": "2023-01-17T09:00:17.186199"
     }
     
 ## 일별 근무 기록 조회
