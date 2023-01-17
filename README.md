@@ -1,6 +1,5 @@
 
-# Django REST API application
-
+# Django REST API
 
 
 ## Run the app
