@@ -70,6 +70,7 @@ class WorkTimeListAPIView(APIView):
         date = WorkDate.getWorkDate(now)
 
         worktimeData = list(WorkTime.objects.filter(user_id=user_id).order_by('-date'))
+        
         recentData = worktimeData[0]
         if recentData != None and recentData.date.strftime('%Y-%m-%d') == date and recentData.out_time is None:
             inTime = WorkDate.changeTypeToDatetime(recentData.in_time)
@@ -80,17 +81,13 @@ class WorkTimeListAPIView(APIView):
         return Response(WorkTimeSerializer(worktimeData, many=True).data, status=status.HTTP_200_OK)
 
 class WorkTimeDetailAPIView(APIView):
-    def get(self, request, pk):
-        worktime = WorkTime.objects.get(id=pk)
-        return Response(WorkTimeSerializer(worktime).data, status=status.HTTP_201_CREATED)
-
     def put(self, request, pk):
         reqData = request.data
         data = WorkTime.objects.get(id=pk)
         serializer = WorkTimeSerializer(instance=data, data=reqData)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     def delete(self, request, pk):
