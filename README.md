@@ -3,6 +3,7 @@
 
 ## 앱 실행
 ```
+docker-compose up db
 docker-compose up -d
 python3 manage.py migrate 
 ```
