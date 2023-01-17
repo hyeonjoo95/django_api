@@ -1,8 +1,7 @@
 
 # Django REST API
 
-
-## Run the app
+## 앱 실행
 ```
 docker-compose up -d
 python3 manage.py migrate 
